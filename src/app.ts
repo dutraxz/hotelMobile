@@ -1,8 +1,13 @@
 import express from "express";
 import { Request, Response, NextFunction } from "express";
+import router from "./routes/tarefaRoutes";
 
 const app = express();
-app.use(express.json())
+app.use(express.json());
+
+app.use("/tarefas", router);
+
+
 
 //rota parametro api/quartos/1
 app.get("/parametro/:nome", (req: Request, res: Response, next: NextFunction) =>{
